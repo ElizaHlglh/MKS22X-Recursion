@@ -26,7 +26,14 @@ public class recursion{
      *precondition: n is non-negative
      */
     public static int fib(int n){
-
+      //if/base case: when n = 0||1, return 1;
+      //else: recall function fib(n-1) + fib(n-2)
+      if (n == 0 || n == 1){
+        return 1;
+      }
+      else{
+        return fib(n-1) + fib(n-2);
+      }
     }
 
     /*As Per classwork*/
