@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 public class recursion{
     /*You may write additional private methods */
 
@@ -7,17 +8,17 @@ public class recursion{
 
     */
     public static double sqrt(double n, double tolerance){
-      return sqrtHelp(n, 1);
+      return sqrtHelp(n, 1, tolerance);
     }
 
-    public static double sqrtHelp(double n, double guess){
+    public static double sqrtHelp(double n, double guess, double tolerance){
       //if/base case: when guess is within 0.0001%
       //else: recall sqrtHelp(n, new guess value);
-      if (Math.abs(((Math.pow(guess,2) - n)/n * 100)) <= 0.001){//see if guess is within 0.001% error
+      if (Math.abs(((Math.pow(guess,2) - n)/n * 100)) <= tolerance){//see if guess is within 0.001% error
         return guess;
       }
       else{
-        return sqrtHelp(n, (n/guess + guess)/2); // else try  new guess
+        return sqrtHelp(n, (n/guess + guess)/2, tolerance); // else try  new guess
       }
     }
 
@@ -38,6 +39,8 @@ public class recursion{
 
     /*As Per classwork*/
     public static ArrayList<Integer> makeAllSums(){
+      ArrayList<Integer> temperary = new ArrayList<Integer>();
+      return temperary;
     }
 
 }
