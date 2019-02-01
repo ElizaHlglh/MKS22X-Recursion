@@ -45,9 +45,14 @@ public class recursion{
       return ans;
     }
 
-    public static ArrayList<Integer> SumHelp(int start, int answer, ArrayList<Integer> ans){
+    public static void SumHelp(int start, int answer, ArrayList<Integer> ans){
       if (start == 0){
         ans.add(answer);
+      }
+      else{
+        ans.add(answer);
+        SumHelp(start-1, answer+start, ans);
+        SumHelp(start-1, answer+0, ans);
       }
     }
 
