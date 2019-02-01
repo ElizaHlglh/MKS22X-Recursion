@@ -30,7 +30,10 @@ public class recursion{
     public static int fib(int n){
       //if/base case: when n = 0||1, return 1;
       //else: recall function fib(n-1) + fib(n-2)
-      if (n == 0 || n == 1){
+      if (n == 0){
+        return 0;
+      }
+      else if (n == 1){
         return 1;
       }
       else{
@@ -46,15 +49,11 @@ public class recursion{
     }
 
     public static void SumHelp(int start, int answer, ArrayList<Integer> ans){
+      //8 answers, try printing to check
       if (start == 0){
-        if (ans.indexOf(answer) == -1){
-          ans.add(answer);
-        }
+        ans.add(answer);
       }
       else{
-        if (ans.indexOf(answer) == -1){
-          ans.add(answer);
-        }
         SumHelp(start-1, answer+start, ans);
         SumHelp(start-1, answer+0, ans);
       }
