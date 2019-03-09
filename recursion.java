@@ -9,6 +9,9 @@ public class recursion{
 
     */
     public static double sqrt(double n, double tolerance){
+      if (n == 0.0){//can't divide anything by 0 when using Newton's approximation;
+        return 0.0;
+      }
       return sqrtHelp(n, 1, tolerance);
     }
 
